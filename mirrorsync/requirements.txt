@@ -1,0 +1,7 @@
+#app
+fastapi
+pydantic
+
+
+py_trello
+deta

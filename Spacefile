@@ -1,0 +1,46 @@
+# Spacefile Docs: https://go.deta.dev/docs/spacefile/v0
+v: 0
+icon: mirrorsync.png
+app_name: "MirrorSync"
+micros:
+    - name: mirrorsync
+      src: mirrorsync
+      engine: python3.9
+      primary: true
+      presets:
+        env:
+          - name: TRELLO_API_KEY
+            description: The api key is required to create a Trello client
+          - name: TRELLO_TOKEN
+            description: The token is required to create a Trello client
+          - name: INSTANCE_HOSTNAME
+            description: The hostname of your MirroSync instance
+          - name: MS_CARDNAME
+            description: MirrorSync scope for card name if set to YES
+            default: YES
+          - name: MS_CARDDESCRIPTION
+            description: MirrorSync scope for card description if set to YES
+            default: YES
+          - name: MS_STARTDUE
+            description: MirrorSync scope for start and due dates if set to YES
+            default: YES
+          - name: MS_LABELS
+            description: MirrorSync scope for labels if set to YES
+            default: YES
+          - name: MS_CHECKLISTS
+            description: MirrorSync scope for checklists if set to YES
+            default: YES
+          - name: MS_ATTACHMENTS
+            description: MirrorSync scope for attachments if set to YES
+            default: YES
+          - name: MS_CUSTOMFIELDS
+            description: MirrorSync scope for custom fields if set to YES
+            default: YES
+          - name: MS_ADDRESS
+            description: MirrorSync scope for location attribles if set to YES
+            default: YES
+          - name: MS_COMMENTS
+            description: MirrorSync scope for comments if set to YES
+            default: YES
+      public_routes:
+        - "/*"
